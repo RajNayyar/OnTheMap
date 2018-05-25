@@ -18,8 +18,8 @@ class parseUser: NSObject {
 func getStudentLocations(completionHandlerForGetLocations: @escaping (_ result: [String:AnyObject]?, _ success: Bool, _ error: String?) -> Void) {
     
     let request = NSMutableURLRequest(url: URL(string: "\(udacityParsingConstants.APIUrl)/\(udacityParsingConstants.studentLocation)\(udacityParsingConstants.LimitAndOrder)")!)
-    request.addValue(udacityParsingConstants.appId, forHTTPHeaderField: "X-Parse-Application-Id")
-    request.addValue(udacityParsingConstants.APIKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
+    request.addValue(udacityParsingConstants.parseappId, forHTTPHeaderField: "X-Parse-Application-Id")
+    request.addValue(udacityParsingConstants.RESTAPIKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
     
     let session = udacityUser.sharedSession
     let task = session.dataTask(with: request as URLRequest) { data, response, error in

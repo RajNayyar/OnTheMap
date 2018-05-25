@@ -14,8 +14,8 @@ struct udacityDirectConstants {
 
 struct udacityParsingConstants {
     static let APIUrl = "https://parse.udacity.com/parse/classes"
-    static let appId = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
-    static let APIKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
+    static let parseappId = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
+    static let RESTAPIKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
     static let defaultURL = "http://www.udacity.com"
     static let studentLocation = "StudentLocation"
     static let LimitAndOrder = "?limit=100&order=-updatedAt"

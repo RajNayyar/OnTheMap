@@ -98,10 +98,10 @@ class postLocationViewController: UIViewController, UITextFieldDelegate, MKMapVi
     
     
     @IBAction func pinAction(_ sender: Any) {
-      if(locationTextField.text=="" || websiteTextField.text=="")
-      {
-        self.Error(name: "please enter location and URL")
-      }
+        if((locationTextField.text?.isEmpty)! || (websiteTextField.text?.isEmpty)! || locationTextField.text=="Enter Location" || websiteTextField.text=="Enter Website")
+        {
+            self.Error(name: "please enter location and URL")
+        }
         
       else{
         parseUser.sharedInstance().postLocation(mapString: locationTextField.text!, mediaUrl: websiteTextField.text!, latitude: mapLatitude!, longitude: mapLongitude!) { (result, success, error) in

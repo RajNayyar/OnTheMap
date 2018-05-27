@@ -117,12 +117,12 @@ class udacityUser: NSObject {
     func errorHandler(_ data: Data?, _ response: URLResponse?, _ error: NSError?, completionHandler: @escaping (_ result: [String:AnyObject]?, _ success: Bool, _ error: String?) -> Void) {
         
         guard (error == nil) else {
-            completionHandler(nil, false, "Please Check Your Network Connection")
+            completionHandler(nil, false, "ERROR")
             return
         }
         
         guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-            completionHandler(nil, false, "Enter the Correct Credentials.")
+            completionHandler(nil, false, "Please Check Your network connection")
             return
         }
         

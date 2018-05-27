@@ -114,7 +114,7 @@ func getStudentLocations(completionHandlerForGetLocations: @escaping (_ result: 
         }
         
         guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-            completionHandler(nil, false, "Enter the Correct Credentials.")
+            completionHandler(nil, false, "Error Collecting Data from Server")
             return
         }
         

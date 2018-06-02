@@ -34,7 +34,7 @@ class loginViewController: UIViewController {
         self.view.endEditing(true)
         udacityUser.sharedInstance().authentication(username: emailId.text!, password: passwordText.text!) { (result, error) in
             if error != nil {
-                self.Error(error: "Wrong Email-Id and Password combination!")
+                self.Error(error: error!)
             }
             else {
                 DispatchQueue.main.async {

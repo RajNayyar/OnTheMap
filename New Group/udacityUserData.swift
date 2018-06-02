@@ -8,9 +8,15 @@
 
 
 import Foundation
+
+
 struct studentData {
     
-    static var Location = [studentData]()
+    class SharedData: NSObject {
+        static let shared = SharedData()
+        var studentsInformations = [studentData]()
+    }
+
     
     var firstName: String?
     var lastName: String?
@@ -32,4 +38,5 @@ struct studentData {
         self.mediaURL = dictionary["mediaURL"]  as? String
     }
 }
+
 

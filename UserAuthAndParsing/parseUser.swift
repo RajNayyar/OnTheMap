@@ -55,12 +55,12 @@ func getStudentLocations(completionHandlerForGetLocations: @escaping (_ result: 
         parseUser.sharedInstance().getStudentLocations{(result, success, error) in
             if success {
                 if let data = result!["results"] as AnyObject? {
-                    studentData.Location.removeAll()
+                  studentData.SharedData.shared.studentsInformations.removeAll() ///////
                     for result in data as! [AnyObject] {
                         let student = studentData(dictionary: result as! [String : AnyObject])
-                        studentData.Location.append(student)
+                        studentData.SharedData.shared.studentsInformations.append(student) /////////////
                     }
-                    completionHandler(studentData.Location, true, nil)
+                    completionHandler(studentData.SharedData.shared.studentsInformations, true, nil) ////////
                 }
             }
             else{

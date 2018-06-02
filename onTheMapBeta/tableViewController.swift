@@ -27,13 +27,13 @@ class tableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return studentData.Location.count
+        return studentData.SharedData.shared.studentsInformations.count ////////////
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell")! as! tableViewCell
-        let user = studentData.Location[indexPath.row]
+        let user = studentData.SharedData.shared.studentsInformations[indexPath.row] ////////
         let userName = "\(String(describing: user.fullName!))"
         print(userName)
         let range = userName.rangeOfCharacter(from: NSCharacterSet.letters)
@@ -70,7 +70,7 @@ class tableViewController: UITableViewController {
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let app = UIApplication.shared
-        let mediaUrl = studentData.Location[indexPath.row].mediaURL
+        let mediaUrl = studentData.SharedData.shared.studentsInformations[indexPath.row].mediaURL /////////
         if let toOpen = mediaUrl {
             if VerifyUrl(urlString: toOpen) {
                 app.open(URL(string: toOpen)!, options: [:], completionHandler: nil)
